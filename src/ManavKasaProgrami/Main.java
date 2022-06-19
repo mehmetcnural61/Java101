@@ -27,7 +27,7 @@ Scanner input=new Scanner(System.in);
 
         double toplamTutar;
         toplamTutar=((armutMiktar*armutKilo)+(elmaMiktar*elmaKilo)+(domatesMiktar*domatesKilo)+(muzMiktar*muzKilo)+(patlicanMiktar*patlicanKilo));
-        System.out.println("Toplam Tutar: " +toplamTutar +" TL");
+        System.out.println("Toplam TutaR: " +toplamTutar +" TL");
 
     }
 }
