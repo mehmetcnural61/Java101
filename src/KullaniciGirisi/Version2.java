@@ -11,7 +11,7 @@ public class Version2 {
         System.out.print("Password = ");
         password=scanner.nextLine();
 
-        if(userName.equals("emre")&&password.equals("123")){
+        if(userName.equals("mehmet")&&password.equals("123")){
             System.out.println("Giriş yaptınız");
         } else if (!password.equals("123")) {
             System.out.print("Şifreniz yanlış! Şifrenizi sıfırlamak ister misiniz, Evet ise 1 e basın : ");
