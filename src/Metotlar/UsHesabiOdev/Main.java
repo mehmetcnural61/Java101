@@ -1,6 +1,5 @@
 package Metotlar.UsHesabiOdev;
 
-import java.awt.*;
 import java.util.Scanner;
 
 public class Main {
