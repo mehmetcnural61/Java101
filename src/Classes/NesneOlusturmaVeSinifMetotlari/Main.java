@@ -6,28 +6,35 @@ public class Main {
     public static void main(String[] args) {
 
 
-        Car audi = new Car();
-        audi.model= "Audi A8";
-        audi.speed=25;
+        Car audi = new Car("Audi", 20, "Grey");
+
         audi.increaseSpeed(20);
         audi.decreaseSpeed(10);
-        audi.printSpeed();
-      //  System.out.println(audi.model+" Hızı: "+audi.speed);
+        audi.printInfo();
+        //  System.out.println(audi.model+" Hızı: "+audi.speed);
 
 
-        Car bmw = new Car();
-        bmw.model="BMW 3.20d";
-        bmw.speed=28;
+        System.out.println("===");
+
+        Car bmw = new Car("BMW 3.20d", 28, "Blue");
+
         bmw.increaseSpeed(26);
         bmw.increaseSpeed(60);
-        bmw.printSpeed();
-     //   System.out.println(bmw.model+" Hizi: "+bmw.speed);
+        bmw.printInfo();
+        //   System.out.println(bmw.model+" Hizi: "+bmw.speed);
+        System.out.println("===");
+        Car mercedes = new Car("Mercedes SLS AMG ", 30, "Red");
 
-        Car mercedes = new Car();
-        mercedes.model="Mercedes SLS AMG ";
-        mercedes.speed=30;
-        mercedes.printSpeed();
-     //   System.out.println(mercedes.model+" Hizi: "+mercedes.speed);
+        mercedes.printInfo();
+        //   System.out.println(mercedes.model+" Hizi: "+mercedes.speed);
+
+        System.out.println("===");
+
+        Car rover = new Car();
+        rover.model = "Rover";
+        rover.speed = 35;
+        System.out.println(rover.model + " Hizi: " + rover.speed);
+
 
     }
 }
