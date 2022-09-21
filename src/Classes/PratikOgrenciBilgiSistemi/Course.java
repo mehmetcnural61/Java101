@@ -7,6 +7,10 @@ public class Course {
     String prefix;
     int note;
 
+    double szluNotTarih=0.20;
+    double szluNotKimya=0.20;
+    double szluNotBiyoloji=0.20;
+
     Course(String name,String code,String prefix){
         this.name=name;
         this.code=code;
