@@ -21,7 +21,7 @@ public class Student {
         this.c1 = c1;
         this.c2 = c2;
         this.c3 = c3;
-        this.avarage = 0;
+        calcAvarage();
         this.isPass = false;
     }
 
@@ -37,15 +37,19 @@ public class Student {
         }
     }
 
-    public void addBulkVerbalNote(int c1, int c2, int c3) {
-        if(c1>=0 && c1<=100)
-            this.c1.szluNotTarih=c1*this.c1.szluNotTarih;
-        if(c2>=0 && c2<=100)
-            this.c2.szluNotKimya=c2*this.c2.szluNotKimya;
-        if(c3>=0 && c3<=100)
-            this.c3.szluNotBiyoloji=c3*this.c3.szluNotBiyoloji;
-    }
+    public void addBulkVerbalNote(int verb_mat, int verb_fizik, int verb_kimya) {
+        if (verb_mat >= 0 && verb_mat <= 100) {
+            this.c1.verbalNote = verb_mat;
+        }
 
+        if (verb_fizik >= 0 && verb_fizik <= 100) {
+            this.c2.verbalNote = verb_fizik;
+        }
+
+        if (verb_kimya >= 0 && verb_kimya <= 100) {
+            this.c3.verbalNote = verb_kimya;
+        }
+    }
 
 
     public void isPass() {
@@ -64,12 +68,11 @@ public class Student {
     }
 
     public void calcAvarage() {
-        this.avarage=((c1.note+c1.szluNotTarih)
-                +(c2.note+c2.szluNotKimya)
-                +(c3.note+c3.szluNotBiyoloji))/3.0;
-        if (avarage > 100){
-            this.avarage=100;
-        }
+        double tarihAvg = this.c1.note * 0.8 + this.c1.verbalNote * 0.2;
+        double kimyaAvg = this.c2.note * 0.8 + this.c2.verbalNote * 0.2;
+        double biyolojiAvg = this.c3.note * 0.8 + this.c3.verbalNote * 0.2;
+        double _average = (tarihAvg + kimyaAvg + biyolojiAvg) / 3;
+        this.avarage = Math.round(_average * 100) / 100d;
     }
 
     public boolean isCheckPass() {
@@ -77,13 +80,12 @@ public class Student {
         return this.avarage > 55;
     }
 
-    public void printNote(){
+    public void printNote() {
         System.out.println("=========================");
         System.out.println("Öğrenci : " + this.name);
-        System.out.println("Tarih Notu : " + this.c1.note);
-        System.out.println("Fizik Notu : " + this.c2.note);
-        System.out.println("Biyoloji Notu : " + this.c3.note);
-
+        System.out.println("Tarih Notu : " + this.c1.note + " Sözlü Notu :" + this.c1.verbalNote + " Oran ==> sınav %80  sözlü %20 ");
+        System.out.println("Fizik Notu : " + this.c2.note + " Sözlü Notu :" + this.c2.verbalNote + " Oran ==> sınav %80  sözlü %20");
+        System.out.println("Biyoloji Notu : " + this.c3.note + " Sözlü Notu :" + this.c3.verbalNote + " Oran ==> sınav %80  sözlü %20");
     }
 
 

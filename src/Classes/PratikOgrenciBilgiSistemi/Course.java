@@ -6,10 +6,11 @@ public class Course {
     String code;
     String prefix;
     int note;
+    int verbalNote;
 
-    double szluNotTarih=0.20;
-    double szluNotKimya=0.20;
-    double szluNotBiyoloji=0.20;
+    double szluNotTarih;
+    double szluNotKimya;
+    double szluNotBiyoloji;
 
     Course(String name,String code,String prefix){
         this.name=name;
