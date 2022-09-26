@@ -20,15 +20,22 @@ public class Match {
         if (isCheck()) {
             while (this.f1.health > 0 && this.f2.health > 0) {
                 System.out.println("===Yeni Round===");
-                this.f2.health = this.f1.hit(f2);
-                if (isWin()){
-                    break;
+                double random=Math.random()*100;
+                if (random >=0 && random <=50){
+                    this.f2.health = this.f1.hit(f2);
+                    if (isWin()){
+                        break;
+                    }
+                    f1.health=f2.hit(f1);
+                }
+                if (random>50 && random <=100){
+                    this.f1.health = this.f2.hit(this.f1);
+                    if (isWin()){
+                        break;
+                    }
+                    f2.health=f1.hit(f2);
                 }
 
-                this.f1.health = this.f2.hit(this.f1);
-                if (isWin()){
-                    break;
-                }
                 System.out.println(this.f1.name+ " Sağlık :"+this.f1.health);
                 System.out.println(this.f2.name+ " Sağlık :"+this.f2.health);
             }
